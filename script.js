@@ -1,19 +1,27 @@
-var cityNameInput = document.querySelector("#cityName");
-var searchButton = document.querySelector("#search");
-var userCitySearchSpan = document.querySelector("#cityName");
-
+var textInput = document.querySelector("#inputTextHere");
+var signUpButton = document.querySelector("#saveTextButton");
+var msgDiv = document.querySelector("#msg");
+var userTextSpan = document.querySelector("#saved-text");
 renderLastRegistered();
-
-function renderLastRegistered(){
-    var cityName = localStorage.getItem("cityName");
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+msgDiv.setAttribute("class", type);
 }
-userCitySearchSpan.textContent = cityName;
-
-searchButton.addEventListener("click",function(event) {
-    event.preventDefault();
-
-    var cityName = document.querySelector("#cityName").value;
-
-    localStorage.setItem("cityName",cityName);
+function renderLastRegistered() {
+  var text = localStorage.getItem("inputTextHere");
+  if (text  === null) {
+    return;
+  }
+ userTextSpan.textContent = text;
+}
+signUpButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  var text = document.querySelector("#inputTextHere").value;
+  if (text === "") {
+   displayMessage("error", "");
+  } else {
+    displayMessage("success", "");
+    localStorage.setItem("inputTextHere", text);
     renderLastRegistered();
+  }
 });

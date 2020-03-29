@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,25 +13,19 @@
     <section class="section">
       <div class="columns">
         <div class="column">
-          <form method="POST">
-            <div class="input-group">
-              <label for="cityName">City Search</label><br>
-              <input type="text" name="cityName" id="cityName" placeholder="Enter City Name"/>
-              <div id="search">
-                <button class="button is-normal" button id="search">Search</button>
-              </div>
-            </div>
-          </form>
+      <form method="POST">
+        <div class="input-group">
+          <label for="inputTextHere">Enter City Name Below</label><br>
+          <input type="text" name="inputTextHere" id="inputTextHere" placeholder="Enter City Name Here" />
         </div>
-<div class="citySearchHistory">
-<span id="citySearch"></span></p>
-</div>
-
+        <div id="msg"></div> 
+        <button id="saveTextButton">Click Here to Search City</button>
+      </form>   
+        <span id="saved-text"></span>
+    </div>
     </section>
-
   </div>
   </section>
   <script src="script.js"></script>
 </body>
-
 </html>
